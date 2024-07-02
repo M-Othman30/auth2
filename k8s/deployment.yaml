@@ -37,4 +37,4 @@ spec:
             ephemeral-storage: "500Mi"
         env:
         - name: DJANGO_SETTINGS_MODULE
-          value: hello_django.settings
+          value: auth.settings
