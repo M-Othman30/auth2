@@ -13,7 +13,7 @@ steps:
       '-t',
       'us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2',
       '-f',
-      'auth/app/Dockerfile.prod',  # Specify the path to your Dockerfile if not in the root directory
+      'auth/Dockerfile.prod',  # Specify the path to your Dockerfile if not in the root directory
       '.'
     ]
 

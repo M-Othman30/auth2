@@ -11,9 +11,9 @@ then
     echo "PostgreSQL started"
 fi
 
-python ./auth/app/manage.py flush --no-input
-python ./auth/app/manage.py makemigrations
-python ./auth/app/manage.py migrate
-python ./auth/app/manage.py runserver
+python ./auth/manage.py flush --no-input
+python ./auth/manage.py makemigrations
+python ./auth/manage.py migrate
+python ./auth/manage.py runserver
 
 exec "$@"
