@@ -14,6 +14,6 @@ fi
 python ./auth/manage.py flush --no-input
 python ./auth/manage.py makemigrations
 python ./auth/manage.py migrate
-python ./auth/manage.py runserver
+gunicorn auth.wsgi:application --bind 0.0.0.0:8000
 
 exec "$@"
