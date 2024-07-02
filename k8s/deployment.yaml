@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: authentication2
+  name: authentication
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: authentication2
+      app: authentication
   template:
     metadata:
       labels:
-        app: authentication2
+        app: authentication
     spec:
       containers:
-      - name: authentication2
-        image: us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
+      - name: authentication
+        image: us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth
         ports:
         - containerPort: 8000
         resources:
