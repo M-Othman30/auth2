@@ -1,0 +1,37 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+
+steps:
+
+# Step 0
+#docker build the image from httpd public dockerhub Apache image
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [
+      'build',
+      '-t',
+      'us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2',
+      '-f',
+      'auth/app/Dockerfile.prod',  # Specify the path to your Dockerfile if not in the root directory
+      '.'
+    ]
+
+# Step 1
+#push the previously built image to ythe docker repo created in Step 0
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2']
+
+
+# Step 2
+# Publish the release
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - > 
+      gcloud deploy releases create release-$BUILD_ID
+      --delivery-pipeline=my-pipe
+      --region=us-central1
+      --images=my-app-image=us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
+      --source=./

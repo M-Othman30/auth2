@@ -1,0 +1,235 @@
+"POST /auth/api/token/ HTTP/1.1" 200 516
+JWT Token Verification Failed: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid or expired', code='token_not_valid')}]}
+Unauthorized: /car/list
+"GET /car/list HTTP/1.1" 401 413
+Error in API Gateway Middleware: cannot unpack non-iterable NoneType object
+Traceback (most recent call last):
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 31, in __call__
+    auth_result = self.verify_jwt_token(request)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 47, in verify_jwt_token
+    user, token = jwt_authentication.authenticate(request)
+    ^^^^^^^^^^^
+TypeError: cannot unpack non-iterable NoneType object
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 21
+"POST /auth/api/token/ HTTP/1.1" 200 516
+JWT Token Verification Successful
+Microservice Proxy Request Error: 401 Client Error: Unauthorized for url: http://127.0.0.1:8001/car/list/
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 91
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8001/car/list/
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 100
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+Error in API Gateway Middleware: Object of type bytes is not JSON serializable
+Traceback (most recent call last):
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 37, in __call__
+    response = self.proxy_request(request, microservice_url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 85, in proxy_request
+    response = response.prepare()  # Prepare the request
+               ^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 299, in prepare
+    p.prepare(
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 21
+JWT Token Verification Successful
+Error in API Gateway Middleware: Object of type bytes is not JSON serializable
+Traceback (most recent call last):
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 37, in __call__
+    response = self.proxy_request(request, microservice_url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 85, in proxy_request
+    response = response.prepare()  # Prepare the request
+               ^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 299, in prepare
+    p.prepare(
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 21
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+Error in API Gateway Middleware: Object of type bytes is not JSON serializable
+Traceback (most recent call last):
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 37, in __call__
+    response = self.proxy_request(request, microservice_url)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 86, in proxy_request
+    response = response.prepare()  # Prepare the request
+               ^^^^^^^^^^^^^^^^^^
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 299, in prepare
+    p.prepare(
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 371, in prepare
+    self.prepare_body(data, files, json)
+  File "F:\graduation project\project\myenv\Lib\site-packages\requests\models.py", line 511, in prepare_body
+    body = complexjson.dumps(json, allow_nan=False)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "C:\Python311\Lib\json\encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 21
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+Microservice Proxy Request Error: 401 Client Error: Unauthorized for url: http://127.0.0.1:8001/car/list/
+Internal Server Error: /car/list
+"GET /car/list HTTP/1.1" 500 91
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+"GET /user/profile/1 HTTP/1.1" 301 0
+JWT Token Verification Successful
+"GET /user/profile/1/ HTTP/1.1" 200 77
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+"GET /user/profile/1 HTTP/1.1" 301 0
+JWT Token Verification Successful
+"GET /user/profile/1/ HTTP/1.1" 200 77
+Watching for file changes with StatReloader
+"POST /auth/api/token/ HTTP/1.1" 200 516
+JWT Token Verification Successful
+"GET /user/profile/1 HTTP/1.1" 301 0
+JWT Token Verification Successful
+"GET /user/profile/1/ HTTP/1.1" 200 77
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /auth/api/token/ HTTP/1.1" 200 516
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Failed: {'detail': ErrorDetail(string='Given token not valid for any token type', code='token_not_valid'), 'code': ErrorDetail(string='token_not_valid', code='token_not_valid'), 'messages': [{'token_class': ErrorDetail(string='AccessToken', code='token_not_valid'), 'token_type': ErrorDetail(string='access', code='token_not_valid'), 'message': ErrorDetail(string='Token is invalid or expired', code='token_not_valid')}]}
+Error in API Gateway Middleware: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "F:\graduation project\project\myenv\auth\auth\middleware.py", line 29, in __call__
+    if not auth_result['success']:
+           ~~~~~~~~~~~^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+Internal Server Error: /user/profile/1
+"GET /user/profile/1 HTTP/1.1" 500 21
+JWT Token Verification Successful
+"GET /user/profile/1 HTTP/1.1" 301 0
+JWT Token Verification Successful
+"GET /user/profile/1/ HTTP/1.1" 200 77
+JWT Token Verification Successful
+"GET /car/list/ HTTP/1.1" 200 610
+JWT Token Verification Successful
+Microservice Proxy Request Error: 400 Client Error: Bad Request for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 97
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8002/garage/register/
+Internal Server Error: /garage/register/
+"POST /garage/register/ HTTP/1.1" 500 107
+JWT Token Verification Successful
+"POST /garage/register/ HTTP/1.1" 201 118
+JWT Token Verification Successful
+"GET /garage/list/ HTTP/1.1" 200 172
+JWT Token Verification Successful
+Microservice Proxy Request Error: 404 Client Error: Not Found for url: http://127.0.0.1:8002/garage/find/1
+Internal Server Error: /garage/find/1
+"GET /garage/find/1 HTTP/1.1" 500 92
+JWT Token Verification Successful
+Microservice Proxy Request Error: 404 Client Error: Not Found for url: http://127.0.0.1:8002/garage/find/1/
+Internal Server Error: /garage/find/1/
+"GET /garage/find/1/ HTTP/1.1" 500 93
+JWT Token Verification Successful
+"GET /garage/detail/1/ HTTP/1.1" 200 118
+JWT Token Verification Successful
+"GET /garage/detail/1/ HTTP/1.1" 200 125
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+Microservice Proxy Request Error: 500 Server Error: Internal Server Error for url: http://127.0.0.1:8001/car/list/
+Internal Server Error: /car/list/
+"GET /car/list/ HTTP/1.1" 500 100
+F:\graduation project\project\myenv\auth\auth\middleware.py changed, reloading.
+Watching for file changes with StatReloader
+JWT Token Verification Successful
+"GET /car/list/ HTTP/1.1" 200 610
+JWT Token Verification Successful
+Microservice Proxy Request Error: 401 Client Error: Unauthorized for url: http://127.0.0.1:8002/garage/list/
+Internal Server Error: /garage/list/
+"GET /garage/list/ HTTP/1.1" 500 94
+JWT Token Verification Successful
+"GET /user/profile/1 HTTP/1.1" 301 0
+JWT Token Verification Successful
+"GET /user/profile/1/ HTTP/1.1" 200 77
