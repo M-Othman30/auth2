@@ -16,7 +16,7 @@ spec:
       - name: authentication2
         image: us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
         ports:
-        - containerPort: 8000
+        - containerPort: 8080
         resources:
           limits:
             cpu: "250m"
