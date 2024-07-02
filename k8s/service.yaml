@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: authentication2
 spec:
+  type: LoadBalancer  # Add this line to specify the service type
   selector:
     app: authentication2
   ports:
