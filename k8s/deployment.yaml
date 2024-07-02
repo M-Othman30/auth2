@@ -17,15 +17,6 @@ spec:
         image: us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
         ports:
         - containerPort: 8000
-        # readinessProbe:
-        #   httpGet:
-        #     path: /auth
-        #     port: 80
-          # initialDelaySeconds: 0
-          # periodSeconds: 10
-          # timeoutSeconds: 1
-          # successThreshold: 1
-          # failureThreshold: 3
         resources:
           limits:
             cpu: "250m"
