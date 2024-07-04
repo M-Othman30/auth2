@@ -82,7 +82,7 @@ class APIGatewayMiddleware:
 
         # Proxy the request to the microservice with the JWT token included
         # Decode the jwt token and Extract user id from token
-        decoded_token = jwt.decode(jwt_token, verify=False)
+        decoded_token = jwt.decode(jwt_token, options={"verify_signature": False}, algorithms=["HS256"])
         user_id = decoded_token['user_id']
         userData= User.objects.get(pk=user_id)
         try:
