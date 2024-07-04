@@ -43,7 +43,7 @@ class APIGatewayMiddleware:
             return response
         except Exception as e:
             # logger.exception('Error in API Gateway Middleware: %s', str(e))
-            return self._error_response('Internal Server Error here1')
+            return self._error_response('Internal Server Error : %s', str(e))
 
 
     def authorize_request(self, request):
