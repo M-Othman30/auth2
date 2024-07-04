@@ -14,7 +14,7 @@ User = get_user_model()
 
 class APIGatewayMiddleware:
     SERVICE_URLS = {
-        'car': 'http://34.118.239.141:80',  # Example service URL for the car microservice
+        'car': 'http://34.66.201.152:80',  # Example service URL for the car microservice
         'garage': 'http://127.0.0.1:8002',  # Example service URL for another microservice
         # Add more services and their base URLs as needed
     }
@@ -43,7 +43,7 @@ class APIGatewayMiddleware:
             return response
         except Exception as e:
             # logger.exception('Error in API Gateway Middleware: %s', str(e))
-            return self._error_response('Internal Server Error : %s', str(e))
+            return self._error_response('Internal Server Error')
 
 
     def authorize_request(self, request):
