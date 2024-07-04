@@ -14,7 +14,7 @@ User = get_user_model()
 
 class APIGatewayMiddleware:
     SERVICE_URLS = {
-        'car': 'http://34.118.239.141:8000',  # Example service URL for the car microservice
+        'car': 'http://34.118.239.141:80',  # Example service URL for the car microservice
         'garage': 'http://127.0.0.1:8002',  # Example service URL for another microservice
         # Add more services and their base URLs as needed
     }
@@ -43,7 +43,7 @@ class APIGatewayMiddleware:
             return response
         except Exception as e:
             # logger.exception('Error in API Gateway Middleware: %s', str(e))
-            return self._error_response('Internal Server Error')
+            return self._error_response('Internal Server Error : %s', str(e))
 
 
     def authorize_request(self, request):
@@ -82,7 +82,7 @@ class APIGatewayMiddleware:
 
         # Proxy the request to the microservice with the JWT token included
         # Decode the jwt token and Extract user id from token
-        decoded_token = jwt.decode(jwt_token, verify=False)
+        decoded_token = jwt.decode(jwt_token, options={"verify_signature": False}, algorithms=["HS256"])
         user_id = decoded_token['user_id']
         userData= User.objects.get(pk=user_id)
         try:
