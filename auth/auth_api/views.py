@@ -29,7 +29,8 @@ class ObtainJWTView(APIView):
             return Response({
                'access_token': access_token,
                 'refresh_token': str(refresh),
-                'user_type': user.user_type  # Include user_type in the response
+                'user_type': user.user_type , # Include user_type in the response
+                 'user_id' : user.id
             }, status=200)
         else:
             return Response({'error': 'Invalid credentials'}, status=401)
