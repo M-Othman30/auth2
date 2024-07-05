@@ -14,12 +14,12 @@ User = get_user_model()
 
 class APIGatewayMiddleware:
     SERVICE_URLS = {
-        'car': 'http://34.118.233.250:80',  
-        'garage': 'http://34.118.235.11:80',
-        'rating':'http://34.118.230.18:80',
-        'notification':'http://34.118.235.83:80',
-        'booking':'http://34.118.236.97:80',
-        'invoices':'http://34.118.238.184:80',
+        'car': 'http://34.118.233.250:80/',  
+        'garage': 'http://34.118.235.11:80/',
+        'rating':'http://34.118.230.18:80/',
+        'notification':'http://34.118.235.83:80/',
+        'booking':'http://34.118.236.97:80/',
+        'invoices':'http://34.118.238.184:80/',
        
     }
 
