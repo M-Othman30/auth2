@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: authentication2
-        image: us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
+        image: us-central1-docker.pkg.dev/spot-hunter-428422/microservices/auth2
         ports:
         - containerPort: 8000
         resources:

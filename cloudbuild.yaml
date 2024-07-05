@@ -11,7 +11,7 @@ steps:
     args: [
       'build',
       '-t',
-      'us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2',
+      'us-central1-docker.pkg.dev/spot-hunter-428422/microservices/auth2',
       '-f',
       'auth/Dockerfile.prod',  # Specify the path to your Dockerfile if not in the root directory
       '.'
@@ -20,7 +20,7 @@ steps:
 # Step 1
 #push the previously built image to ythe docker repo created in Step 0
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2']
+    args: ['push', 'us-central1-docker.pkg.dev/spot-hunter-428422/microservices/auth2']
 
 
 # Step 2
@@ -33,5 +33,5 @@ steps:
       gcloud deploy releases create release-$BUILD_ID
       --delivery-pipeline=my-pipe
       --region=us-central1
-      --images=my-app-image=us-central1-docker.pkg.dev/spot-hunter-427512/microservices/auth2
+      --images=my-app-image=us-central1-docker.pkg.dev/spot-hunter-428422/microservices/auth2
       --source=./
