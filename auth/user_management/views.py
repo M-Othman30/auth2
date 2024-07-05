@@ -1,11 +1,11 @@
-# user_management/views.py
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from .serializers import UserSerializer, UserUpdateSerializer, ChangePasswordSerializer
-from django.contrib.auth import get_user_model
+from .services.services import UserService
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
@@ -21,40 +21,35 @@ class ChangePasswordView(generics.UpdateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        # Check if the provided old password is correct
         if not user.check_password(serializer.validated_data['old_password']):
             return Response({'detail': 'Incorrect old password'}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Update the user's password
-        user.set_password(serializer.validated_data['new_password'])
-        user.save()
+        UserService.change_password(user, serializer.validated_data['new_password'])
 
         return Response({'detail': 'Password changed successfully'}, status=status.HTTP_200_OK)
-
 
 class UserView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = UserSerializer
-    def get_object(self):
-        queryset = User.objects.get(pk=self.request.user.id)
-        return queryset 
-    
 
+    def get_object(self):
+        return UserService.get_user_profile(self.request.user.id)
 
 class UserUpdateView(generics.UpdateAPIView):
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = UserUpdateSerializer
 
     def get_object(self):
-        return User.objects.get(username=self.request.user.username)
+        return self.request.user
 
     def update(self, request, *args, **kwargs):
         user = self.get_object()
         serializer = self.get_serializer(user, data=request.data)
         serializer.is_valid(raise_exception=True)
-        self.perform_update(serializer)
-        return Response({"message": "User information updated successfully"}, status=status.HTTP_200_OK)
 
+        updated_user = UserService.update_user_info(user, **serializer.validated_data)
+
+        return Response({"message": "User information updated successfully"}, status=status.HTTP_200_OK)
 
 class RefreshTokenView(APIView):
     permission_classes = [IsAuthenticated]
