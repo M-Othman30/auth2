@@ -14,9 +14,13 @@ User = get_user_model()
 
 class APIGatewayMiddleware:
     SERVICE_URLS = {
-        'car': 'http://34.118.239.141',  # Example service URL for the car microservice
-        'garage': 'http://127.0.0.1:8002',  # Example service URL for another microservice
-        # Add more services and their base URLs as needed
+        'car': 'http://34.118.233.250:80',  
+        'garage': 'http://127.0.0.1:8002',
+        'rating':'http://34.118.230.18',
+        #'notification':'http://34.118.230.18',
+        #'booking':'http://34.118.230.18',
+        'invoices':'http://34.118.238.184',
+       
     }
 
     def __init__(self, get_response):
