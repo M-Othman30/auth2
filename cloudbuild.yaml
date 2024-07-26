@@ -35,4 +35,3 @@ steps:
       --region=us-central1
       --images=my-app-image=us-central1-docker.pkg.dev/spot-hunter-430613/microservices/auth2
       --source=./
-      
