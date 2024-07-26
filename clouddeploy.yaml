@@ -16,4 +16,4 @@ metadata:
  name: qsprod
 description: production cluster
 gke:
- cluster: projects/spot-hunter-428422/locations/us-central1/clusters/cluster-1
+ cluster: projects/spot-hunter-430613/locations/us-central1/clusters/cluster-1
